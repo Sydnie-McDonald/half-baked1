@@ -35,16 +35,16 @@ boulderButton.addEventListener('click', () => {
     handleGuess(answer, 'boulder');
 });
 
-function handleGuess(userGuess, correctSpot) {
+function handleGuess(correctSpot, userGuess) {
     // reset the styles
-    document.querySelectorAll('.hidingPlaces').classList.remove('.face');
+    shedContainer.classList.remove('.hidingPlaces');
+    treeContainer.classList.remove('.hidingPlaces');
+    boulderContainer.classList.remove('.hidingPlaces');
+
     // then increment the guesses
     if (userGuess === correctSpot) {
         correctGuesses++;
         totalGuesses++;
-        // eslint-disable-next-line no-undef
-        document.querySelectorAll('.hidingPlace').classList.add('.face');
-        //   hidingSpot.classList.add('.face');
     } else {
         totalGuesses++;
     }
