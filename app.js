@@ -37,13 +37,16 @@ boulderButton.addEventListener('click', () => {
 
 function handleGuess(userGuess, correctSpot) {
     // reset the styles
-    
-    let guessReset = document.querySelectorAll('.hidingPlaces').innerHTML = ' ';
+    document.querySelectorAll('.hidingPlaces').classList.remove('.face');
     // then increment the guesses
     if (userGuess === correctSpot) {
-        correctGuesses += 1;
+        correctGuesses++;
+        totalGuesses++;
+        // eslint-disable-next-line no-undef
+        document.querySelectorAll('.hidingPlace').classList.add('.face');
+        //   hidingSpot.classList.add('.face');
     } else {
-        totalGuesses += 1;
+        totalGuesses++;
     }
     // then grab the appropriate container element for the correct guess from the DOM
     // then add the face class to that element so that the face shows up
