@@ -35,9 +35,15 @@ boulderButton.addEventListener('click', () => {
     handleGuess(answer, 'boulder');
 });
 
+reset(){
+    shedContainer.classList.remove('.hidingPlaces');
+    treeContainer.classList.remove('.hidingPlaces');
+    boulderContainer.classList.remove('.hidingPlaces');
+}
+
 function handleGuess(correctSpot, userGuess) {
     // reset the styles
-    resetStyles();
+    reset();
     // then increment the guesses
     if (userGuess === correctSpot) {
         correctGuesses++;
