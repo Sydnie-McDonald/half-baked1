@@ -37,17 +37,23 @@ boulderButton.addEventListener('click', () => {
 
 function handleGuess(correctSpot, userGuess) {
     // reset the styles
-    shedContainer.classList.remove('.hidingPlaces');
-    treeContainer.classList.remove('.hidingPlaces');
-    boulderContainer.classList.remove('.hidingPlaces');
-
+    resetStyles();
     // then increment the guesses
     if (userGuess === correctSpot) {
         correctGuesses++;
         totalGuesses++;
+
+        const correctHidingPlaceEl = document.getElementById(`${correctSpot}-container`);
+        correctHidingPlaceEl.classList.add('face');
+
+
     } else {
         totalGuesses++;
     }
+
+    winsEl.textContent = correctGuesses;
+    totalEl.textContent = totalGuesses;
+    lossesEl.textContent = totalGuesses - correctGuesses;
     // then grab the appropriate container element for the correct guess from the DOM
     // then add the face class to that element so that the face shows up
     // then if the user guess is correct, increment the correct guesses
