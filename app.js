@@ -47,6 +47,7 @@ function handleGuess(correctSpot, userGuess) {
 
         const correctHidingPlaceEl = document.getElementById(`${correctSpot}-container`);
         correctHidingPlaceEl.classList.add('face');
+
         console.log(correctHidingPlaceEl);
         winsEl.textContent = correctGuesses;
         totalEl.textContent = totalGuesses;
