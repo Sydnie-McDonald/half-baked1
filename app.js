@@ -43,18 +43,17 @@ function handleGuess(correctSpot, userGuess) {
     // then increment the guesses
     if (userGuess === correctSpot) {
         correctGuesses++;
-        totalGuesses++;
 
         const correctHidingPlaceEl = document.getElementById(`${correctSpot}-container`);
         correctHidingPlaceEl.classList.add('face');
 
         console.log(correctHidingPlaceEl);
-        winsEl.textContent = correctGuesses;
-        totalEl.textContent = totalGuesses;
-    } else {
-        totalGuesses++;
-        lossesEl.textContent = totalGuesses - correctGuesses;
     }
+    totalGuesses++;
+    winsEl.textContent = correctGuesses;
+    totalEl.textContent = totalGuesses;
+    lossesEl.textContent = totalGuesses - correctGuesses;
+
     // then add the face class to that element so that the face shows up
     // update the DOM to show this change to the user (including the losses, not tracked directly in state)
 }
